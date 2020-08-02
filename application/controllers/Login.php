@@ -20,7 +20,7 @@ class Login extends CI_Controller{
                     'loggedin'=>TRUE
                 );
                 $this->session->set_userdata($user_data);
-                redirect('Home/Dashboard');
+                redirect('Dashboard/index');
 
             }else{
                 $this->session->set_flashdata('errmsg','Wrong Email or Password');
@@ -29,4 +29,14 @@ class Login extends CI_Controller{
         }
 
     }
+	
+	public function LogoutUser(){
+		$this->session->unset_userdata('user_id');
+		$this->session->unset_userdata('username');
+		$this->session->unset_userdata('email');
+		$this->session->unset_userdata('password');
+		$this->session->unset_userdata('loggedin');
+		
+		redirect('Home/Login');
+	}
 }
