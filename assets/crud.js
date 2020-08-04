@@ -11,7 +11,8 @@ $(document).ready(function(){
 	function listData(){
 		$.ajax({
 			type:'ajax',
-			url:'Dahboard/index',
+			url:'/index',
+			async : false,
 			dataType:'json',
 			
 			success : function(data){
@@ -53,7 +54,7 @@ $(document).ready(function(){
 		
 		$.ajax({
 			type : "POST",
-			url  : "Dashboard/save",
+			url  : '/save',
 			dataType : "JSON",
 			data : {
 				fname:firstName, 
@@ -110,7 +111,7 @@ $(document).ready(function(){
 		
 	});
 	// save edit record
-	 $('#edituserForm').on('submit',function(){
+	 $('#editUserForm').on('submit',function(){
 		var fname = $('#editfname').val();
 		var lname = $('#editlname').val();
 		var gender = $('#editgender').val();
@@ -125,7 +126,7 @@ $(document).ready(function(){
 		
 		$.ajax({
 			type : "POST",
-			url  : "Dashboard/update",
+			url  : "/update",
 			dataType : "JSON",
 			data : {
 				fname:fname, 
@@ -173,7 +174,7 @@ $(document).ready(function(){
 		var empId = $('#deleteUserId').val();
 		$.ajax({
 			type : "POST",
-			url  : "Dashboard/delete",
+			url  : "/delete",
 			dataType : "JSON",  
 			data : {id:Id},
 			success: function(data){

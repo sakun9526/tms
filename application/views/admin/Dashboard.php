@@ -345,7 +345,7 @@
 			   <strong>Are you sure to delete this record?</strong>
 		  </div>
 		  <div class="modal-footer">
-			<input type="hidden" name="deleteEmpId" id="deleteEmpId" class="form-control">
+			<input type="hidden" name="deleteUserId" id="deleteUserId" class="form-control">
 			<button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
 			<button type="submit" class="btn btn-primary">Yes</button>
 		  </div>
