@@ -9,6 +9,7 @@ class Dashboard extends CI_Controller {
 	
 	public function index(){
 		$this->load->view('admin/Dashboard');
+		
 	}
 	
 	public function show(){
@@ -17,6 +18,7 @@ class Dashboard extends CI_Controller {
 	}
 	
 	public function save(){
+
 		$data=$this->CRUD_model->insertData();
 		echo json_encode($data);
 	}
@@ -27,7 +29,7 @@ class Dashboard extends CI_Controller {
 	} 
 	
 	public function delete(){
-		$data->$this->CRUD_model->deleteData();
+		$data=$this->CRUD_model->deleteData();
 		echo json_encode($data);
 	}
 }

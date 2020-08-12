@@ -6,7 +6,7 @@
 			<h1 class="text-center"> TMS DASHBOARD </h1>
 			<hr style="background-color:black; color:black; height:1px;">
 		</div>
-	</div>
+		</div>
 	<div class="row">
 		<div class="col-md-12 mt-2">
 			<!-- Button trigger modal -->
@@ -14,8 +14,10 @@
 			  New User
 			</button>
 
+<!---------------------------------------ADD NEW MODAL------------------------------->		
+
 			<!-- Modal -->
-			<form action="" method="post" id="saveUserForm">
+			<form method="post" id="saveUserForm">
 			<div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog  modal-lg">
 				<div class="modal-content">
@@ -172,6 +174,9 @@
 			  </div>
 			</div>
 		</form>
+
+
+<!---------------------------EDIT MODAL--------------------------------------------------------------------->		
 		
 			<form action="" method="post" id="editUserForm">
 			<div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -323,13 +328,17 @@
 				  </div>
 				  
 				  <div class="modal-footer">
+				  	<input type="hidden" id="editId" class="form-control">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary" id="add">Update</button>
+					<button type="submit" class="btn btn-primary" >Update</button>
 				  </div>
 				</div>
 			  </div>
 			</div>
 		</form>
+
+
+<!---------------------------------------DELETE MODAL-------------------------------------------------->
 		
 		<form id="deleteUserForm" method="post">
 	<div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -354,10 +363,12 @@
 	</div>
 </form>
 
+<!--------------------------------------SHOW RECORDS----------------------------------------------------------->
+
 		
 		    <div class="row">
 				<div class="col-md-12 mt-3">
-					<table class="table" id="userListing">
+					<table class="table" id="userListing" >
 						<thead>
 							<tr>
 							  <th>First Name</th>

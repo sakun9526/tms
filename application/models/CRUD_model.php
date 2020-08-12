@@ -3,8 +3,10 @@
 class CRUD_model extends CI_Model {
 	
 	function dataList(){
-		$hashil=$this->db->get('tms_user_master');
-		return $hashil->result();
+		$result=$this->db->get('tms_user_master');
+		return $result->result();
+
+		
 	}
 	
 	function insertData(){
@@ -15,6 +17,7 @@ class CRUD_model extends CI_Model {
            'password' => sha1($this->input->post('password',TRUE)),
 		   'gender'=> $this->input->post('gender'),
 		   'phone'=> $this->input->post('phone'),
+		   'email' =>$this->input->post('email'),
 		   'package'=> $this->input->post('package'),
 		   'company'=> $this->input->post('company'),
 		   'customer'=> $this->input->post('customer'),
@@ -35,6 +38,7 @@ class CRUD_model extends CI_Model {
             $Password  = sha1($this->input->post('password',TRUE));
 		    $Gender    = $this->input->post('gender');
 		    $Phone     = $this->input->post('phone');
+		    $Email = $this->input->post('email');
 		   $Package    = $this->input->post('package');
 		    $Company    = $this->input->post('company');
 		   $Customer   = $this->input->post('customer');
@@ -47,6 +51,7 @@ class CRUD_model extends CI_Model {
 		   $this->db->set('password',$Password);
 		   $this->db->set('gender',$Gender);
 		   $this->db->set('phone',$Phone);
+		   $this->db->set('email',$Email);
 		   $this->db->set('package',$Package);
 		   $this->db->set('company',$Company);
 		   $this->db->set('customer',$Customer);
@@ -61,6 +66,8 @@ class CRUD_model extends CI_Model {
 
   function deleteData(){
 	    $id=$this->input->post('id');
+	    // var_dump($id);
+	    // die();
 		$this->db->where('id', $id);
 		$result=$this->db->delete('tms_user_master');
 		return $result;
